@@ -5,6 +5,7 @@ public class Employee {
     protected int id;
     protected String name;
     protected String address;
+
     static int count =100;
 
     public Employee() {
@@ -41,6 +42,9 @@ public class Employee {
         this.address = address;
     }
 
+    public double salary(){
+        return 0.0;
+    }
     @Override
     public String toString() {
         return "Employee{" +
