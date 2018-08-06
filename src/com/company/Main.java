@@ -30,14 +30,13 @@ public class Main {
          * Sorting using comparator
          */
         Collections.sort(employeesList, new sorting());
-
-        //System.out.println(employeesList);
+        System.out.println(employeesList);
 
         /**
          * Soring by name array list
          */
         Collections.sort(employeesList,new nameSorting());
-        //System.out.println(employeesList);
+        System.out.println(employeesList);
 
         /**
          * finding only part time or full time employee using instanceof method
@@ -45,11 +44,9 @@ public class Main {
         for(Employee a : employeesList){
 
             if(a instanceof PartTimeEmployee){
-                System.out.println(a);
+                System.out.println(a.getName());
             }
-
         }
-
     }
 }
 /**
@@ -57,6 +54,7 @@ public class Main {
  */
 class sorting implements Comparator<Employee>{
         public int compare(Employee a, Employee b){
+            //sorting in descending order
             return b.id - a.id;
         }
 }
