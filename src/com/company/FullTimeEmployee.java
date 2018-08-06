@@ -8,31 +8,12 @@ public class FullTimeEmployee extends Employee {
       super();
     }
 
-    public FullTimeEmployee(String name, String address, double salary, int bonus) {
-        super(name, address );
-
-        this.salary =bonus + salary;
-    }
-
     public FullTimeEmployee(String name, String address, double salary) {
         super(name, address);
         this.salary = salary;
     }
 
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
-
-    @Override
-    public String toString() {
-        return "\nFullTimeEmployee " +
-                 super.toString() +
-                ", salary= " + salary +" "+
-                '}'+"\n";
+    public double salaryCalc(){
+        return salary + 1000;
     }
 }

@@ -8,12 +8,12 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         PartTimeEmployee partTimeEmployee = new PartTimeEmployee("Pratap", "Baltimore", 40);
-        FullTimeEmployee fullTimeEmployee = new FullTimeEmployee("Pratik","Baltimore",1000,500);
+        FullTimeEmployee fullTimeEmployee = new FullTimeEmployee("Pratik","Baltimore",1000);
         PartTimeEmployee p1 = new PartTimeEmployee("Ujwal", "Nepal", 20);
-        FullTimeEmployee f1 = new FullTimeEmployee("Kabin", "Nepal",2500,500);
+        FullTimeEmployee f1 = new FullTimeEmployee("Kabin", "Nepal",2500);
         PartTimeEmployee p2 = new PartTimeEmployee("Punit", "Ohio", 30);
         PartTimeEmployee p3 = new PartTimeEmployee("Pratik", "India", 50);
-        FullTimeEmployee f2 = new FullTimeEmployee("Diwakar", "Hongkong", 25000,500);
+        FullTimeEmployee f2 = new FullTimeEmployee("Diwakar", "Hongkong", 25000);
 
 
         List<Employee> employeesList = new ArrayList<Employee>();
@@ -30,13 +30,17 @@ public class Main {
          * Sorting using comparator
          */
         Collections.sort(employeesList, new sorting());
-        System.out.println(employeesList);
+       for(Employee c : employeesList){
+           c.showDetails();
+       }
 
         /**
-         * Soring by name array list
+         * Sorting by name array list
          */
         Collections.sort(employeesList,new nameSorting());
-        System.out.println(employeesList);
+        for(Employee c : employeesList){
+            c.showDetails();
+        }
 
         /**
          * finding only part time or full time employee using instanceof method
@@ -44,6 +48,7 @@ public class Main {
         for(Employee a : employeesList){
 
             if(a instanceof PartTimeEmployee){
+            	
                 System.out.println(a.getName());
             }
         }

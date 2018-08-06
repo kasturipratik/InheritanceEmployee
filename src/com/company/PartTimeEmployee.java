@@ -2,7 +2,8 @@ package com.company;
 
 public class PartTimeEmployee extends Employee {
 
-    private double salary;
+
+    private int workhrs;
 
     public PartTimeEmployee() {
         super();
@@ -10,26 +11,12 @@ public class PartTimeEmployee extends Employee {
 
     public PartTimeEmployee(String name, String address, int workHrs){
         super(name, address);
-        this.salary = salaryCalc(workHrs);
+        this.workhrs = workHrs;
     }
 
-    public double getSalary() {
-        return salary;
+    public double salaryCalc(){
+        return  workhrs* 100;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
 
-    public double salaryCalc(int workHrs){
-        return workHrs * 100;
-    }
-
-    @Override
-    public String toString() {
-        return "\nPartTimeEmployee " +
-                super.toString()+
-                ", salary= " + salary +" "+
-                '}'+" \n";
-    }
 }

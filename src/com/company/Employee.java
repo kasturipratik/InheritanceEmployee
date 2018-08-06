@@ -1,6 +1,6 @@
 package com.company;
 
-public class Employee {
+abstract public class Employee {
 
     protected int id;
     protected String name;
@@ -43,11 +43,13 @@ public class Employee {
         this.address = address;
     }
 
+    abstract public double salaryCalc();
 
-    @Override
-    public String toString() {
-        return  "{ id= " + id +
-                ", name= '" + name + '\'' +
-                ", address= '" + address + '\'' ;
+    public void showDetails() {
+        System.out.print("{ ");
+        System.out.print("ID: " + id +", ");
+        System.out.print("Name: " + name +", ");
+        System.out.print("Address: " + address +", ");
+        System.out.print("Salary: " + salaryCalc()+" }\n");
     }
 }
