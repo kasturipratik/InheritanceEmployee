@@ -8,9 +8,15 @@ public class FullTimeEmployee extends Employee {
       super();
     }
 
-    public FullTimeEmployee(String name, String address, double salary) {
+    public FullTimeEmployee(String name, String address, double salary, int bonus) {
         super(name, address );
-        this.salary = salary();
+
+        this.salary =bonus + salary;
+    }
+
+    public FullTimeEmployee(String name, String address, double salary) {
+        super(name, address);
+        this.salary = salary;
     }
 
     public double getSalary() {
@@ -21,9 +27,12 @@ public class FullTimeEmployee extends Employee {
         this.salary = salary;
     }
 
+
     @Override
-    public double salary(){
-        salary =1000 + salary;
-        return salary;
+    public String toString() {
+        return "\nFullTimeEmployee " +
+                 super.toString() +
+                ", salary= " + salary +" "+
+                '}'+"\n";
     }
 }

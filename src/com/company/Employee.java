@@ -13,6 +13,7 @@ public class Employee {
     }
 
     public Employee(String name, String address) {
+
         this.name = name;
         this.id = count++;
         this.address = address;
@@ -42,15 +43,11 @@ public class Employee {
         this.address = address;
     }
 
-    public double salary(){
-        return 0.0;
-    }
+
     @Override
     public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+        return  "{ id= " + id +
+                ", name= '" + name + '\'' +
+                ", address= '" + address + '\'' ;
     }
 }

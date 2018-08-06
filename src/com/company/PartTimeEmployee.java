@@ -10,12 +10,7 @@ public class PartTimeEmployee extends Employee {
 
     public PartTimeEmployee(String name, String address, int workHrs){
         super(name, address);
-        this.salary = salary(workHrs);
-    }
-
-    public double salary(int workHrs){
-
-        return workHrs * 100;
+        this.salary = salaryCalc(workHrs);
     }
 
     public double getSalary() {
@@ -26,13 +21,15 @@ public class PartTimeEmployee extends Employee {
         this.salary = salary;
     }
 
+    public double salaryCalc(int workHrs){
+        return workHrs * 100;
+    }
+
     @Override
     public String toString() {
-        return "\nPartTimeEmployee{" +
-                ", id= " + id +
-                ", name= '" + name + '\'' +
-                ", address= '" + address + '\'' +
-                ", salary= " + salary +
-                '}'+"\n";
+        return "\nPartTimeEmployee " +
+                super.toString()+
+                ", salary= " + salary +" "+
+                '}'+" \n";
     }
 }

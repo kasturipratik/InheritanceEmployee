@@ -1,15 +1,18 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+
 
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        FullTimeEmployee fullTimeEmployee = new FullTimeEmployee("Pratik","Baltimore",1000);
-        FullTimeEmployee f1 = new FullTimeEmployee("kabin", "Nepal",2500);
-        FullTimeEmployee f2 = new FullTimeEmployee("Diwakar", "Hongkong", 25000);
+        FullTimeEmployee fullTimeEmployee = new FullTimeEmployee("Pratik","Baltimore",1000,500);
+        FullTimeEmployee f1 = new FullTimeEmployee("Kabin", "Nepal",2500,500);
+        FullTimeEmployee f2 = new FullTimeEmployee("Diwakar", "Hongkong", 25000,500);
 
         List<Employee> employeesList = new ArrayList<Employee>();
         employeesList.add(fullTimeEmployee);
@@ -26,8 +29,20 @@ public class Main {
         employeesList.add(p2);
         employeesList.add(p3);
 
-       // System.out.println(employeesList);
+        /**
+         * Sorting using comparator
+         */
+        Collections.sort(employeesList, new sorting());
+        System.out.println(employeesList);
 
         System.out.println(p1.getAddress() +" "+ p1.getName()+" " + p1.getSalary());
     }
+}
+/**
+ * *comparing the objects in the employee list using id and sorting in descending order*
+ */
+class sorting implements Comparator<Employee>{
+        public int compare(Employee a, Employee b){
+            return b.id - a.id;
+        }
 }
